@@ -6,8 +6,8 @@ set -e
 set -u
 
 NUMFILES=10
-WRITESTR=AELD_IS_FUN
-WRITEDIR=/tmp/aeld-data
+WRITESTR=AESD_IS_AWESOME
+WRITEDIR=/tmp/aesd-data
 username=$(cat conf/username.txt)
 
 if [ $# -lt 2 ]
@@ -47,7 +47,7 @@ fi
 
 for i in $( seq 1 $NUMFILES)
 do
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
